@@ -1,0 +1,28 @@
+
+{
+    "name":"Slovakia",
+    "parent directory":"./export/The World/Europe/Slovakia",
+    "back-ground color":"#ff6600",
+    "border color":"#000000",
+    "map path":"./raw_map_data/Slovakia.json",
+    "image path":"./export/The World/Europe/Slovakia",
+    "image location x":150.0,
+    "image location y":150.0,
+    "width":802,
+    "height":536,
+    "border thickness":1,
+    "zoom level":1.0,
+    "scroll location x":70.0,
+    "scroll location y":90.0,
+    "subregions":[
+        {
+            "name":"Slovakia",
+            "capital":"Slovakia Capital",
+            "leader":"Slovakia Leader",
+            "red":75,
+            "green":75,
+            "blue":75,
+            "image path":"./export/The World/Europe/Slovakia"
+        }
+    ]
+}

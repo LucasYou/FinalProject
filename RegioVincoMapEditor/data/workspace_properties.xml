@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    This XML file allows us to easily customize the look and language used
+    in our program's user interface. Note that this properties file is only
+    for the workspace controls, which are custom for each application
+-->
+<properties>
+    <property_list>
+        <!-- PROGRAM ICON FILES -->
+	<property name="ADD_ICON"               value="Add.png"></property>
+	
+        
+        
+        <property name="Edit_Map_Name_ICON"		value="EditMapName.png"></property>
+	<property name="ADD_IMAGE_ICON"                 value="AddImage.png"></property>
+        <property name="REMOVE_IMAGE_ICON"		value="RemoveImage.png"></property>
+        <property name="BG_COLOR_ICON"                  value="BGColor.png"></property>
+        <property name="BORDER_COLOR_ICON"		value="BorderColor.png"></property>
+        <property name="REASSIGN_COLOR_ICON"		value="ReassignColor.png"></property>
+        <property name="CHANGE_DIMENSIONS_ICON"		value="Dimensions.png"></property>
+        <property name="PLAY_ANTHEM_ICON"		value="Play.png"></property>
+        <property name="PAUSE_ANTHEM_ICON"		value="Pause.png"></property>
+        
+        
+        
+       
+        <!-- TOOLTIPS FOR BUTTONS -->
+
+        
+        
+        
+        <property name="Edit_Map_Name_TOOLTIP"		value="Change Map Name"></property>
+	<property name="ADD_IMAGE_TOOLTIP"		value="Add Image"></property>
+        <property name="REMOVE_IMAGE_TOOLTIP"		value="Remove Image"></property>
+        <property name="BG_COLOR_TOOLTIP"		value="Change Background Color"></property>
+        <property name="BORDER_COLOR_TOOLTIP"		value="Change Border Color"></property>
+        <property name="REASSIGN_COLOR_TOOLTIP"		value="Reassign Color"></property>
+        <property name="CHANGE_DIMENSIONS_TOOLTIP"	value="Change Dimensions"></property>
+        <property name="PLAY_ANTHEM_TOOLTIP"		value="Play The Anthem"></property>
+        <property name="PAUSE_ANTHEM_TOOLTIP"		value="Pause The Anthem"></property>
+	
+	<!-- HEADINGS AND PROMPTS -->
+	<property name="WORKSPACE_HEADING_LABEL"    value="To Do List"></property>
+	<property name="DETAILS_HEADING_LABEL"	    value="Details"></property>
+	<property name="NAME_PROMPT"                value="Name of Todo List:"></property>
+	<property name="OWNER_PROMPT"               value="Owner:"></property>
+        <property name="ITEMS_HEADING_LABEL"        value="Items"></property>
+	
+        <!-- TABLE COLUMN HEADINGS -->
+        <property name="CATEGORY_COLUMN_HEADING"        value="Category"></property>
+        <property name="DESCRIPTION_COLUMN_HEADING"     value="Description"></property>
+        <property name="START_DATE_COLUMN_HEADING"      value="Start Date"></property>
+        <property name="END_DATE_COLUMN_HEADING"        value="End Date"></property>
+        <property name="COMPLETED_COLUMN_HEADING"       value="Completed"></property>
+        
+                	
+	<!-- ERROR MESSAGES AND TITLES FOR THEIR DIALOGS -->
+	<property name="ATTRIBUTE_UPDATE_ERROR_MESSAGE"	    value="WARNING: An error occured updating the element's attribute."></property>
+	<property name="ATTRIBUTE_UPDATE_ERROR_TITLE"	    value="Attribute Update Error"></property>
+	<property name="UPDATE_ERROR_MESSAGE"		    value="An error occured updating the UI"></property>
+	<property name="UPDATE_ERROR_TITLE"		    value="UI Update Error"></property>
+    </property_list>
+    <property_options_list>
+    </property_options_list>
+</properties>
