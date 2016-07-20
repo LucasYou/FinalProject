@@ -9,6 +9,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.beans.value.ChangeListener;
@@ -570,6 +571,40 @@ public class Workspace extends AppWorkspaceComponent
             mapBox.setStyle("-fx-background-color: #" + hex);
             //System.out.println(hex1);
             dataManager.setBackGroundColor(hex);
+        });
+        
+        reassignColor.setOnAction(e ->{
+            
+            //GENERATE A ARRAYLIST OF NUMBER 1 - 244 IN RANDOM ORDER
+            Random rand = new Random();
+            ArrayList numbers = new ArrayList();
+            //int num = rand.nextInt(254) + 1;
+            int num = rand.nextInt(254) + 1;
+            numbers.add(num);
+            for(int i = 0; i < 255; i++)
+            {
+                num = rand.nextInt(254) + 1;
+                for(int j = 0; j < numbers.size(); j++)
+                {
+                    while(num == (int)numbers.get(j))
+                        num = rand.nextInt(254) + 1;        
+                }
+                numbers.add(num);
+            }
+            
+            for(int a = 0; a < dataManager.getItems().size(); a++)
+            {
+                int colors = (int)numbers.get(a);
+                Node node = group.getChildren().get(a);
+                Polyline p = (Polyline) node;
+                Color color = Color.rgb(colors,colors,colors);
+                p.setFill(color);
+                dataManager.getItems().get(a).setRed(colors);
+                dataManager.getItems().get(a).setGreen(colors);
+                dataManager.getItems().get(a).setBlue(colors);
+            }
+        
+        
         });
      }
     

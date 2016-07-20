@@ -2,8 +2,8 @@
 {
     "name":"1",
     "parent directory":"C:\\WORKSPACE\\CSE219\\Final Project\\RegioVincoMapEditor\\work",
-    "back-ground color":"cc9933ff",
-    "border color":"0xcc99ccff",
+    "back-ground color":"661a33ff",
+    "border color":"0x4d8080ff",
     "map path":"C:\\WORKSPACE\\CSE219\\Final Project\\RegioVincoMapEditor\\work\\San Marino.json",
     "image path":"C:\\WORKSPACE\\CSE219\\Final Project\\RegioVincoMapEditor\\work",
     "image x":0.0,
@@ -19,73 +19,73 @@
             "name":"subregion 1",
             "capital":"subregion_capital 1",
             "leader":"subregion_leader 1",
-            "red":225,
-            "green":225,
-            "blue":225
+            "red":112,
+            "green":112,
+            "blue":112
         },
         {
             "name":"subregion 2",
             "capital":"subregion_capital 2",
             "leader":"subregion_leader 2",
-            "red":220,
-            "green":220,
-            "blue":220
+            "red":181,
+            "green":181,
+            "blue":181
         },
         {
             "name":"subregion 3",
             "capital":"subregion_capital 3",
             "leader":"subregion_leader 3",
-            "red":215,
-            "green":215,
-            "blue":215
+            "red":168,
+            "green":168,
+            "blue":168
         },
         {
             "name":"subregion 4",
             "capital":"subregion_capital 4",
             "leader":"subregion_leader 4",
-            "red":210,
-            "green":210,
-            "blue":210
+            "red":198,
+            "green":198,
+            "blue":198
         },
         {
             "name":"subregion 5",
             "capital":"subregion_capital 5",
             "leader":"subregion_leader 5",
-            "red":205,
-            "green":205,
-            "blue":205
+            "red":36,
+            "green":36,
+            "blue":36
         },
         {
             "name":"subregion 6",
             "capital":"subregion_capital 6",
             "leader":"subregion_leader 6",
-            "red":200,
-            "green":200,
-            "blue":200
+            "red":209,
+            "green":209,
+            "blue":209
         },
         {
             "name":"subregion 7",
             "capital":"subregion_capital 7",
             "leader":"subregion_leader 7",
-            "red":195,
-            "green":195,
-            "blue":195
+            "red":80,
+            "green":80,
+            "blue":80
         },
         {
             "name":"subregion 8",
             "capital":"subregion_capital 8",
             "leader":"subregion_leader 8",
-            "red":190,
-            "green":190,
-            "blue":190
+            "red":41,
+            "green":41,
+            "blue":41
         },
         {
             "name":"subregion 9",
             "capital":"subregion_capital 9",
             "leader":"subregion_leader 9",
-            "red":185,
-            "green":185,
-            "blue":185
+            "red":61,
+            "green":61,
+            "blue":61
         }
     ]
 }
