@@ -193,7 +193,7 @@ public class Workspace extends AppWorkspaceComponent
         BorderThicknessView.setImage(BorderThickness);
         changeBorderThickness = new Slider();
         changeBorderThickness.setMin(0.001);
-        changeBorderThickness.setMax(0.01);
+        changeBorderThickness.setMax(1);
         changeBorderThickness.setValue(0.001);
         buttonTooltip = new Tooltip("Change Border Thickness");
         changeBorderThickness.setTooltip(buttonTooltip);
@@ -202,8 +202,8 @@ public class Workspace extends AppWorkspaceComponent
         ZoomLevel = new Image(imagePath);
         ZoomLevelView.setImage(ZoomLevel);
         zoomLevel = new Slider();
-        zoomLevel.setMin(50);
-        zoomLevel.setMax(1000);
+        zoomLevel.setMin(1);
+        zoomLevel.setMax(2000);
         zoomLevel.setValue(1);
         
         buttonTooltip = new Tooltip("Change Zoom Level");
@@ -217,7 +217,7 @@ public class Workspace extends AppWorkspaceComponent
         
         //EDITTOOLBAR SET UP
         editToolbar.getChildren().add(ButtonBar);
-        editToolbar.getChildren().add(ChooserBar);
+        editToolbar.getChildren().add(ChooserBar);      
         editToolbar.getChildren().add(SliderBar);
         editToolbar.setHgap(50);
         
@@ -287,6 +287,8 @@ public class Workspace extends AppWorkspaceComponent
             dataManager.addcoordinateY(y);        
         }
         boolean empty = dataManager.getItems().isEmpty();
+        //System.out.println(dataManager.getSubregions().get(0));
+        //System.out.println(dataManager.getSubregionsPolygon().get(0));
         for(int i = 0; i < dataManager.getSubregions().size(); i++)
         {
             Polyline polyline = new Polyline();
@@ -311,21 +313,12 @@ public class Workspace extends AppWorkspaceComponent
                 String subregionLeader = "subregion_leader " + (i+1);
                 Subregions subregion = new Subregions(subregionName, subregionCapital,subregionLeader, red,green,blue);
                 subregion.getPolyline().add(polyline);
-                //System.out.println(subregion.getPolyline().toString());
-                /*
-                if(subregion.getPolyline().isEmpty())
-                    subregion.getPolyline().add(polyline);
-                else
-                {
-                    System.out.println("Im here");
-                    subregion.reset();
-                    subregion.getPolyline().add(polyline);
-                }*/
+
                 color = Color.rgb(red,green,blue);
                 polyline.setFill(color);
-                red -= 5;
-                green -= 5;
-                blue -= 5;
+                //red -= 1;
+                //green -= 1;
+                //blue -= 1;
                 dataManager.addItem(subregion);
                 
             }
@@ -337,9 +330,9 @@ public class Workspace extends AppWorkspaceComponent
                 color = Color.rgb(red,green,blue);
                 dataManager.getItems().get(i).getPolyline().add(polyline);
                 polyline.setFill(color);
-                red -= 5;
-                green -= 5;
-                blue -= 5;
+                //red -= 1;
+                //green -= 1;
+                //blue -= 1;
                 
             }
             polyline.setOnMouseClicked(e -> {

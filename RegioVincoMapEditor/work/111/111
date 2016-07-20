@@ -1,0 +1,2027 @@
+
+{
+    "name":"111",
+    "parent directory":"C:\\WORKSPACE\\CSE219\\Final Project\\RegioVincoMapEditor\\work",
+    "back-ground color":"ff6600",
+    "border color":"0x000000ff",
+    "map path":"C:\\WORKSPACE\\CSE219\\Final Project\\RegioVincoMapEditor\\work\\World_adm0.json",
+    "image path":"C:\\WORKSPACE\\CSE219\\Final Project\\RegioVincoMapEditor\\work",
+    "image x":0.0,
+    "image y":0.0,
+    "width":802,
+    "height":536,
+    "border thickness":"0.001",
+    "zoom level":1,
+    "scroll x":0,
+    "scroll y":0,
+    "subregions":[
+        {
+            "name":"subregion 1",
+            "capital":"subregion_capital 1",
+            "leader":"subregion_leader 1",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 2",
+            "capital":"subregion_capital 2",
+            "leader":"subregion_leader 2",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 3",
+            "capital":"subregion_capital 3",
+            "leader":"subregion_leader 3",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 4",
+            "capital":"subregion_capital 4",
+            "leader":"subregion_leader 4",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 5",
+            "capital":"subregion_capital 5",
+            "leader":"subregion_leader 5",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 6",
+            "capital":"subregion_capital 6",
+            "leader":"subregion_leader 6",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 7",
+            "capital":"subregion_capital 7",
+            "leader":"subregion_leader 7",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 8",
+            "capital":"subregion_capital 8",
+            "leader":"subregion_leader 8",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 9",
+            "capital":"subregion_capital 9",
+            "leader":"subregion_leader 9",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 10",
+            "capital":"subregion_capital 10",
+            "leader":"subregion_leader 10",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 11",
+            "capital":"subregion_capital 11",
+            "leader":"subregion_leader 11",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 12",
+            "capital":"subregion_capital 12",
+            "leader":"subregion_leader 12",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 13",
+            "capital":"subregion_capital 13",
+            "leader":"subregion_leader 13",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 14",
+            "capital":"subregion_capital 14",
+            "leader":"subregion_leader 14",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 15",
+            "capital":"subregion_capital 15",
+            "leader":"subregion_leader 15",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 16",
+            "capital":"subregion_capital 16",
+            "leader":"subregion_leader 16",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 17",
+            "capital":"subregion_capital 17",
+            "leader":"subregion_leader 17",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 18",
+            "capital":"subregion_capital 18",
+            "leader":"subregion_leader 18",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 19",
+            "capital":"subregion_capital 19",
+            "leader":"subregion_leader 19",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 20",
+            "capital":"subregion_capital 20",
+            "leader":"subregion_leader 20",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 21",
+            "capital":"subregion_capital 21",
+            "leader":"subregion_leader 21",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 22",
+            "capital":"subregion_capital 22",
+            "leader":"subregion_leader 22",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 23",
+            "capital":"subregion_capital 23",
+            "leader":"subregion_leader 23",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 24",
+            "capital":"subregion_capital 24",
+            "leader":"subregion_leader 24",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 25",
+            "capital":"subregion_capital 25",
+            "leader":"subregion_leader 25",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 26",
+            "capital":"subregion_capital 26",
+            "leader":"subregion_leader 26",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 27",
+            "capital":"subregion_capital 27",
+            "leader":"subregion_leader 27",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 28",
+            "capital":"subregion_capital 28",
+            "leader":"subregion_leader 28",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 29",
+            "capital":"subregion_capital 29",
+            "leader":"subregion_leader 29",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 30",
+            "capital":"subregion_capital 30",
+            "leader":"subregion_leader 30",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 31",
+            "capital":"subregion_capital 31",
+            "leader":"subregion_leader 31",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 32",
+            "capital":"subregion_capital 32",
+            "leader":"subregion_leader 32",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 33",
+            "capital":"subregion_capital 33",
+            "leader":"subregion_leader 33",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 34",
+            "capital":"subregion_capital 34",
+            "leader":"subregion_leader 34",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 35",
+            "capital":"subregion_capital 35",
+            "leader":"subregion_leader 35",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 36",
+            "capital":"subregion_capital 36",
+            "leader":"subregion_leader 36",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 37",
+            "capital":"subregion_capital 37",
+            "leader":"subregion_leader 37",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 38",
+            "capital":"subregion_capital 38",
+            "leader":"subregion_leader 38",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 39",
+            "capital":"subregion_capital 39",
+            "leader":"subregion_leader 39",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 40",
+            "capital":"subregion_capital 40",
+            "leader":"subregion_leader 40",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 41",
+            "capital":"subregion_capital 41",
+            "leader":"subregion_leader 41",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 42",
+            "capital":"subregion_capital 42",
+            "leader":"subregion_leader 42",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 43",
+            "capital":"subregion_capital 43",
+            "leader":"subregion_leader 43",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 44",
+            "capital":"subregion_capital 44",
+            "leader":"subregion_leader 44",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 45",
+            "capital":"subregion_capital 45",
+            "leader":"subregion_leader 45",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 46",
+            "capital":"subregion_capital 46",
+            "leader":"subregion_leader 46",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 47",
+            "capital":"subregion_capital 47",
+            "leader":"subregion_leader 47",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 48",
+            "capital":"subregion_capital 48",
+            "leader":"subregion_leader 48",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 49",
+            "capital":"subregion_capital 49",
+            "leader":"subregion_leader 49",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 50",
+            "capital":"subregion_capital 50",
+            "leader":"subregion_leader 50",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 51",
+            "capital":"subregion_capital 51",
+            "leader":"subregion_leader 51",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 52",
+            "capital":"subregion_capital 52",
+            "leader":"subregion_leader 52",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 53",
+            "capital":"subregion_capital 53",
+            "leader":"subregion_leader 53",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 54",
+            "capital":"subregion_capital 54",
+            "leader":"subregion_leader 54",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 55",
+            "capital":"subregion_capital 55",
+            "leader":"subregion_leader 55",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 56",
+            "capital":"subregion_capital 56",
+            "leader":"subregion_leader 56",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 57",
+            "capital":"subregion_capital 57",
+            "leader":"subregion_leader 57",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 58",
+            "capital":"subregion_capital 58",
+            "leader":"subregion_leader 58",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 59",
+            "capital":"subregion_capital 59",
+            "leader":"subregion_leader 59",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 60",
+            "capital":"subregion_capital 60",
+            "leader":"subregion_leader 60",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 61",
+            "capital":"subregion_capital 61",
+            "leader":"subregion_leader 61",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 62",
+            "capital":"subregion_capital 62",
+            "leader":"subregion_leader 62",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 63",
+            "capital":"subregion_capital 63",
+            "leader":"subregion_leader 63",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 64",
+            "capital":"subregion_capital 64",
+            "leader":"subregion_leader 64",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 65",
+            "capital":"subregion_capital 65",
+            "leader":"subregion_leader 65",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 66",
+            "capital":"subregion_capital 66",
+            "leader":"subregion_leader 66",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 67",
+            "capital":"subregion_capital 67",
+            "leader":"subregion_leader 67",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 68",
+            "capital":"subregion_capital 68",
+            "leader":"subregion_leader 68",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 69",
+            "capital":"subregion_capital 69",
+            "leader":"subregion_leader 69",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 70",
+            "capital":"subregion_capital 70",
+            "leader":"subregion_leader 70",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 71",
+            "capital":"subregion_capital 71",
+            "leader":"subregion_leader 71",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 72",
+            "capital":"subregion_capital 72",
+            "leader":"subregion_leader 72",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 73",
+            "capital":"subregion_capital 73",
+            "leader":"subregion_leader 73",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 74",
+            "capital":"subregion_capital 74",
+            "leader":"subregion_leader 74",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 75",
+            "capital":"subregion_capital 75",
+            "leader":"subregion_leader 75",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 76",
+            "capital":"subregion_capital 76",
+            "leader":"subregion_leader 76",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 77",
+            "capital":"subregion_capital 77",
+            "leader":"subregion_leader 77",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 78",
+            "capital":"subregion_capital 78",
+            "leader":"subregion_leader 78",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 79",
+            "capital":"subregion_capital 79",
+            "leader":"subregion_leader 79",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 80",
+            "capital":"subregion_capital 80",
+            "leader":"subregion_leader 80",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 81",
+            "capital":"subregion_capital 81",
+            "leader":"subregion_leader 81",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 82",
+            "capital":"subregion_capital 82",
+            "leader":"subregion_leader 82",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 83",
+            "capital":"subregion_capital 83",
+            "leader":"subregion_leader 83",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 84",
+            "capital":"subregion_capital 84",
+            "leader":"subregion_leader 84",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 85",
+            "capital":"subregion_capital 85",
+            "leader":"subregion_leader 85",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 86",
+            "capital":"subregion_capital 86",
+            "leader":"subregion_leader 86",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 87",
+            "capital":"subregion_capital 87",
+            "leader":"subregion_leader 87",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 88",
+            "capital":"subregion_capital 88",
+            "leader":"subregion_leader 88",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 89",
+            "capital":"subregion_capital 89",
+            "leader":"subregion_leader 89",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 90",
+            "capital":"subregion_capital 90",
+            "leader":"subregion_leader 90",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 91",
+            "capital":"subregion_capital 91",
+            "leader":"subregion_leader 91",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 92",
+            "capital":"subregion_capital 92",
+            "leader":"subregion_leader 92",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 93",
+            "capital":"subregion_capital 93",
+            "leader":"subregion_leader 93",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 94",
+            "capital":"subregion_capital 94",
+            "leader":"subregion_leader 94",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 95",
+            "capital":"subregion_capital 95",
+            "leader":"subregion_leader 95",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 96",
+            "capital":"subregion_capital 96",
+            "leader":"subregion_leader 96",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 97",
+            "capital":"subregion_capital 97",
+            "leader":"subregion_leader 97",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 98",
+            "capital":"subregion_capital 98",
+            "leader":"subregion_leader 98",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 99",
+            "capital":"subregion_capital 99",
+            "leader":"subregion_leader 99",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 100",
+            "capital":"subregion_capital 100",
+            "leader":"subregion_leader 100",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 101",
+            "capital":"subregion_capital 101",
+            "leader":"subregion_leader 101",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 102",
+            "capital":"subregion_capital 102",
+            "leader":"subregion_leader 102",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 103",
+            "capital":"subregion_capital 103",
+            "leader":"subregion_leader 103",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 104",
+            "capital":"subregion_capital 104",
+            "leader":"subregion_leader 104",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 105",
+            "capital":"subregion_capital 105",
+            "leader":"subregion_leader 105",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 106",
+            "capital":"subregion_capital 106",
+            "leader":"subregion_leader 106",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 107",
+            "capital":"subregion_capital 107",
+            "leader":"subregion_leader 107",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 108",
+            "capital":"subregion_capital 108",
+            "leader":"subregion_leader 108",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 109",
+            "capital":"subregion_capital 109",
+            "leader":"subregion_leader 109",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 110",
+            "capital":"subregion_capital 110",
+            "leader":"subregion_leader 110",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 111",
+            "capital":"subregion_capital 111",
+            "leader":"subregion_leader 111",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 112",
+            "capital":"subregion_capital 112",
+            "leader":"subregion_leader 112",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 113",
+            "capital":"subregion_capital 113",
+            "leader":"subregion_leader 113",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 114",
+            "capital":"subregion_capital 114",
+            "leader":"subregion_leader 114",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 115",
+            "capital":"subregion_capital 115",
+            "leader":"subregion_leader 115",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 116",
+            "capital":"subregion_capital 116",
+            "leader":"subregion_leader 116",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 117",
+            "capital":"subregion_capital 117",
+            "leader":"subregion_leader 117",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 118",
+            "capital":"subregion_capital 118",
+            "leader":"subregion_leader 118",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 119",
+            "capital":"subregion_capital 119",
+            "leader":"subregion_leader 119",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 120",
+            "capital":"subregion_capital 120",
+            "leader":"subregion_leader 120",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 121",
+            "capital":"subregion_capital 121",
+            "leader":"subregion_leader 121",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 122",
+            "capital":"subregion_capital 122",
+            "leader":"subregion_leader 122",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 123",
+            "capital":"subregion_capital 123",
+            "leader":"subregion_leader 123",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 124",
+            "capital":"subregion_capital 124",
+            "leader":"subregion_leader 124",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 125",
+            "capital":"subregion_capital 125",
+            "leader":"subregion_leader 125",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 126",
+            "capital":"subregion_capital 126",
+            "leader":"subregion_leader 126",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 127",
+            "capital":"subregion_capital 127",
+            "leader":"subregion_leader 127",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 128",
+            "capital":"subregion_capital 128",
+            "leader":"subregion_leader 128",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 129",
+            "capital":"subregion_capital 129",
+            "leader":"subregion_leader 129",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 130",
+            "capital":"subregion_capital 130",
+            "leader":"subregion_leader 130",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 131",
+            "capital":"subregion_capital 131",
+            "leader":"subregion_leader 131",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 132",
+            "capital":"subregion_capital 132",
+            "leader":"subregion_leader 132",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 133",
+            "capital":"subregion_capital 133",
+            "leader":"subregion_leader 133",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 134",
+            "capital":"subregion_capital 134",
+            "leader":"subregion_leader 134",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 135",
+            "capital":"subregion_capital 135",
+            "leader":"subregion_leader 135",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 136",
+            "capital":"subregion_capital 136",
+            "leader":"subregion_leader 136",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 137",
+            "capital":"subregion_capital 137",
+            "leader":"subregion_leader 137",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 138",
+            "capital":"subregion_capital 138",
+            "leader":"subregion_leader 138",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 139",
+            "capital":"subregion_capital 139",
+            "leader":"subregion_leader 139",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 140",
+            "capital":"subregion_capital 140",
+            "leader":"subregion_leader 140",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 141",
+            "capital":"subregion_capital 141",
+            "leader":"subregion_leader 141",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 142",
+            "capital":"subregion_capital 142",
+            "leader":"subregion_leader 142",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 143",
+            "capital":"subregion_capital 143",
+            "leader":"subregion_leader 143",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 144",
+            "capital":"subregion_capital 144",
+            "leader":"subregion_leader 144",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 145",
+            "capital":"subregion_capital 145",
+            "leader":"subregion_leader 145",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 146",
+            "capital":"subregion_capital 146",
+            "leader":"subregion_leader 146",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 147",
+            "capital":"subregion_capital 147",
+            "leader":"subregion_leader 147",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 148",
+            "capital":"subregion_capital 148",
+            "leader":"subregion_leader 148",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 149",
+            "capital":"subregion_capital 149",
+            "leader":"subregion_leader 149",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 150",
+            "capital":"subregion_capital 150",
+            "leader":"subregion_leader 150",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 151",
+            "capital":"subregion_capital 151",
+            "leader":"subregion_leader 151",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 152",
+            "capital":"subregion_capital 152",
+            "leader":"subregion_leader 152",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 153",
+            "capital":"subregion_capital 153",
+            "leader":"subregion_leader 153",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 154",
+            "capital":"subregion_capital 154",
+            "leader":"subregion_leader 154",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 155",
+            "capital":"subregion_capital 155",
+            "leader":"subregion_leader 155",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 156",
+            "capital":"subregion_capital 156",
+            "leader":"subregion_leader 156",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 157",
+            "capital":"subregion_capital 157",
+            "leader":"subregion_leader 157",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 158",
+            "capital":"subregion_capital 158",
+            "leader":"subregion_leader 158",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 159",
+            "capital":"subregion_capital 159",
+            "leader":"subregion_leader 159",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 160",
+            "capital":"subregion_capital 160",
+            "leader":"subregion_leader 160",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 161",
+            "capital":"subregion_capital 161",
+            "leader":"subregion_leader 161",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 162",
+            "capital":"subregion_capital 162",
+            "leader":"subregion_leader 162",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 163",
+            "capital":"subregion_capital 163",
+            "leader":"subregion_leader 163",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 164",
+            "capital":"subregion_capital 164",
+            "leader":"subregion_leader 164",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 165",
+            "capital":"subregion_capital 165",
+            "leader":"subregion_leader 165",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 166",
+            "capital":"subregion_capital 166",
+            "leader":"subregion_leader 166",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 167",
+            "capital":"subregion_capital 167",
+            "leader":"subregion_leader 167",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 168",
+            "capital":"subregion_capital 168",
+            "leader":"subregion_leader 168",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 169",
+            "capital":"subregion_capital 169",
+            "leader":"subregion_leader 169",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 170",
+            "capital":"subregion_capital 170",
+            "leader":"subregion_leader 170",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 171",
+            "capital":"subregion_capital 171",
+            "leader":"subregion_leader 171",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 172",
+            "capital":"subregion_capital 172",
+            "leader":"subregion_leader 172",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 173",
+            "capital":"subregion_capital 173",
+            "leader":"subregion_leader 173",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 174",
+            "capital":"subregion_capital 174",
+            "leader":"subregion_leader 174",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 175",
+            "capital":"subregion_capital 175",
+            "leader":"subregion_leader 175",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 176",
+            "capital":"subregion_capital 176",
+            "leader":"subregion_leader 176",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 177",
+            "capital":"subregion_capital 177",
+            "leader":"subregion_leader 177",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 178",
+            "capital":"subregion_capital 178",
+            "leader":"subregion_leader 178",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 179",
+            "capital":"subregion_capital 179",
+            "leader":"subregion_leader 179",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 180",
+            "capital":"subregion_capital 180",
+            "leader":"subregion_leader 180",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 181",
+            "capital":"subregion_capital 181",
+            "leader":"subregion_leader 181",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 182",
+            "capital":"subregion_capital 182",
+            "leader":"subregion_leader 182",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 183",
+            "capital":"subregion_capital 183",
+            "leader":"subregion_leader 183",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 184",
+            "capital":"subregion_capital 184",
+            "leader":"subregion_leader 184",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 185",
+            "capital":"subregion_capital 185",
+            "leader":"subregion_leader 185",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 186",
+            "capital":"subregion_capital 186",
+            "leader":"subregion_leader 186",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 187",
+            "capital":"subregion_capital 187",
+            "leader":"subregion_leader 187",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 188",
+            "capital":"subregion_capital 188",
+            "leader":"subregion_leader 188",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 189",
+            "capital":"subregion_capital 189",
+            "leader":"subregion_leader 189",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 190",
+            "capital":"subregion_capital 190",
+            "leader":"subregion_leader 190",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 191",
+            "capital":"subregion_capital 191",
+            "leader":"subregion_leader 191",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 192",
+            "capital":"subregion_capital 192",
+            "leader":"subregion_leader 192",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 193",
+            "capital":"subregion_capital 193",
+            "leader":"subregion_leader 193",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 194",
+            "capital":"subregion_capital 194",
+            "leader":"subregion_leader 194",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 195",
+            "capital":"subregion_capital 195",
+            "leader":"subregion_leader 195",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 196",
+            "capital":"subregion_capital 196",
+            "leader":"subregion_leader 196",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 197",
+            "capital":"subregion_capital 197",
+            "leader":"subregion_leader 197",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 198",
+            "capital":"subregion_capital 198",
+            "leader":"subregion_leader 198",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 199",
+            "capital":"subregion_capital 199",
+            "leader":"subregion_leader 199",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 200",
+            "capital":"subregion_capital 200",
+            "leader":"subregion_leader 200",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 201",
+            "capital":"subregion_capital 201",
+            "leader":"subregion_leader 201",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 202",
+            "capital":"subregion_capital 202",
+            "leader":"subregion_leader 202",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 203",
+            "capital":"subregion_capital 203",
+            "leader":"subregion_leader 203",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 204",
+            "capital":"subregion_capital 204",
+            "leader":"subregion_leader 204",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 205",
+            "capital":"subregion_capital 205",
+            "leader":"subregion_leader 205",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 206",
+            "capital":"subregion_capital 206",
+            "leader":"subregion_leader 206",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 207",
+            "capital":"subregion_capital 207",
+            "leader":"subregion_leader 207",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 208",
+            "capital":"subregion_capital 208",
+            "leader":"subregion_leader 208",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 209",
+            "capital":"subregion_capital 209",
+            "leader":"subregion_leader 209",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 210",
+            "capital":"subregion_capital 210",
+            "leader":"subregion_leader 210",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 211",
+            "capital":"subregion_capital 211",
+            "leader":"subregion_leader 211",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 212",
+            "capital":"subregion_capital 212",
+            "leader":"subregion_leader 212",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 213",
+            "capital":"subregion_capital 213",
+            "leader":"subregion_leader 213",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 214",
+            "capital":"subregion_capital 214",
+            "leader":"subregion_leader 214",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 215",
+            "capital":"subregion_capital 215",
+            "leader":"subregion_leader 215",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 216",
+            "capital":"subregion_capital 216",
+            "leader":"subregion_leader 216",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 217",
+            "capital":"subregion_capital 217",
+            "leader":"subregion_leader 217",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 218",
+            "capital":"subregion_capital 218",
+            "leader":"subregion_leader 218",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 219",
+            "capital":"subregion_capital 219",
+            "leader":"subregion_leader 219",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 220",
+            "capital":"subregion_capital 220",
+            "leader":"subregion_leader 220",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 221",
+            "capital":"subregion_capital 221",
+            "leader":"subregion_leader 221",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 222",
+            "capital":"subregion_capital 222",
+            "leader":"subregion_leader 222",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 223",
+            "capital":"subregion_capital 223",
+            "leader":"subregion_leader 223",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 224",
+            "capital":"subregion_capital 224",
+            "leader":"subregion_leader 224",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 225",
+            "capital":"subregion_capital 225",
+            "leader":"subregion_leader 225",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 226",
+            "capital":"subregion_capital 226",
+            "leader":"subregion_leader 226",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 227",
+            "capital":"subregion_capital 227",
+            "leader":"subregion_leader 227",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 228",
+            "capital":"subregion_capital 228",
+            "leader":"subregion_leader 228",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 229",
+            "capital":"subregion_capital 229",
+            "leader":"subregion_leader 229",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 230",
+            "capital":"subregion_capital 230",
+            "leader":"subregion_leader 230",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 231",
+            "capital":"subregion_capital 231",
+            "leader":"subregion_leader 231",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 232",
+            "capital":"subregion_capital 232",
+            "leader":"subregion_leader 232",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 233",
+            "capital":"subregion_capital 233",
+            "leader":"subregion_leader 233",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 234",
+            "capital":"subregion_capital 234",
+            "leader":"subregion_leader 234",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 235",
+            "capital":"subregion_capital 235",
+            "leader":"subregion_leader 235",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 236",
+            "capital":"subregion_capital 236",
+            "leader":"subregion_leader 236",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 237",
+            "capital":"subregion_capital 237",
+            "leader":"subregion_leader 237",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 238",
+            "capital":"subregion_capital 238",
+            "leader":"subregion_leader 238",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 239",
+            "capital":"subregion_capital 239",
+            "leader":"subregion_leader 239",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 240",
+            "capital":"subregion_capital 240",
+            "leader":"subregion_leader 240",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 241",
+            "capital":"subregion_capital 241",
+            "leader":"subregion_leader 241",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 242",
+            "capital":"subregion_capital 242",
+            "leader":"subregion_leader 242",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 243",
+            "capital":"subregion_capital 243",
+            "leader":"subregion_leader 243",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 244",
+            "capital":"subregion_capital 244",
+            "leader":"subregion_leader 244",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 245",
+            "capital":"subregion_capital 245",
+            "leader":"subregion_leader 245",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 246",
+            "capital":"subregion_capital 246",
+            "leader":"subregion_leader 246",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 247",
+            "capital":"subregion_capital 247",
+            "leader":"subregion_leader 247",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 248",
+            "capital":"subregion_capital 248",
+            "leader":"subregion_leader 248",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 249",
+            "capital":"subregion_capital 249",
+            "leader":"subregion_leader 249",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 250",
+            "capital":"subregion_capital 250",
+            "leader":"subregion_leader 250",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 251",
+            "capital":"subregion_capital 251",
+            "leader":"subregion_leader 251",
+            "red":225,
+            "green":225,
+            "blue":225
+        }
+    ]
+}

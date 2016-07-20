@@ -1,0 +1,75 @@
+
+{
+    "name":"1112",
+    "parent directory":"C:\\WORKSPACE\\CSE219\\Final Project\\RegioVincoMapEditor\\work",
+    "back-ground color":"ff6600",
+    "border color":"0x000000ff",
+    "map path":"C:\\WORKSPACE\\CSE219\\Final Project\\RegioVincoMapEditor\\work\\Andorra.json",
+    "image path":"C:\\WORKSPACE\\CSE219\\Final Project\\RegioVincoMapEditor\\work",
+    "image x":0.0,
+    "image y":0.0,
+    "width":802,
+    "height":536,
+    "border thickness":"0.001",
+    "zoom level":1,
+    "scroll x":0,
+    "scroll y":0,
+    "subregions":[
+        {
+            "name":"subregion 1",
+            "capital":"subregion_capital 1",
+            "leader":"subregion_leader 1",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 2",
+            "capital":"subregion_capital 2",
+            "leader":"subregion_leader 2",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 3",
+            "capital":"subregion_capital 3",
+            "leader":"subregion_leader 3",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 4",
+            "capital":"subregion_capital 4",
+            "leader":"subregion_leader 4",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 5",
+            "capital":"subregion_capital 5",
+            "leader":"subregion_leader 5",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 6",
+            "capital":"subregion_capital 6",
+            "leader":"subregion_leader 6",
+            "red":225,
+            "green":225,
+            "blue":225
+        },
+        {
+            "name":"subregion 7",
+            "capital":"subregion_capital 7",
+            "leader":"subregion_leader 7",
+            "red":225,
+            "green":225,
+            "blue":225
+        }
+    ]
+}

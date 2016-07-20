@@ -69,7 +69,7 @@ public class DataManager implements AppDataComponent {
         Width = 802;
         Height = 536;
         BorderThickness = 0.001;
-        ZoomLevel = 50; 
+        ZoomLevel = 1; 
         ScrollX = 0;
         ScrollY = 0;    
     }
@@ -94,7 +94,7 @@ public class DataManager implements AppDataComponent {
         Width = 802;
         Height = 536;
         BorderThickness = 0.001;
-        ZoomLevel = 50; 
+        ZoomLevel = 1; 
         ScrollX = 0;
         ScrollY = 0;
 
@@ -205,7 +205,7 @@ public class DataManager implements AppDataComponent {
         Width = 802;
         Height = 536;
         BorderThickness = 0.001;
-        ZoomLevel = 50;
+        ZoomLevel = 1;
         ScrollX = 0;
         ScrollY = 0;
         
