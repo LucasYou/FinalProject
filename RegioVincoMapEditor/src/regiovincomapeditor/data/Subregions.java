@@ -1,5 +1,6 @@
 
 package regiovincomapeditor.data;
+import java.util.ArrayList;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -25,6 +26,9 @@ public class Subregions
     final IntegerProperty Red;
     final IntegerProperty Green;
     final IntegerProperty Blue;
+    
+    
+    public  ArrayList Polyline = new ArrayList();
     
     public Subregions()
     {
@@ -98,9 +102,12 @@ public class Subregions
     
     public void reset()
     {
-
+        Polyline.clear();
         
     }
-    
+    public ArrayList getPolyline()
+    {
+        return Polyline;
+    }
 
 }

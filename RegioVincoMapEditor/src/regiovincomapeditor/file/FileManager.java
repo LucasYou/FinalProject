@@ -6,7 +6,6 @@
 package regiovincomapeditor.file;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -15,12 +14,9 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.io.StringWriter;
-import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 import javafx.collections.ObservableList;
-import javafx.stage.FileChooser;
-import javafx.stage.FileChooser.ExtensionFilter;
 import javax.json.Json;
 import javax.json.JsonArray;
 import javax.json.JsonArrayBuilder;
@@ -32,17 +28,10 @@ import javax.json.JsonValue;
 import javax.json.JsonWriter;
 import javax.json.JsonWriterFactory;
 import javax.json.stream.JsonGenerator;
-import properties_manager.PropertiesManager;
 import regiovincomapeditor.data.DataManager;
 import regiovincomapeditor.data.Subregions;
-import saf.AppTemplate;
-import saf.Progressbar;
 import saf.components.AppDataComponent;
 import saf.components.AppFileComponent;
-import static saf.settings.AppPropertyType.SAVE_WORK_TITLE;
-import static saf.settings.AppPropertyType.WORK_FILE_EXT;
-import static saf.settings.AppPropertyType.WORK_FILE_EXT_DESC;
-import static saf.settings.AppStartupConstants.PATH_WORK;
 
 /**
  *
@@ -86,7 +75,7 @@ public class FileManager implements AppFileComponent
     static final String JSON_SUBREGIONS = "subregions";
     
     
-
+    int total;
 
     @Override
     public void saveData(AppDataComponent data, String filePath) throws FileNotFoundException
@@ -183,7 +172,7 @@ public class FileManager implements AppFileComponent
         dataManager.setZoomLevel(ZoomLevel);
         dataManager.setScrollX(ScrollX);
         dataManager.setScrollY(ScrollY);
-        
+       
         JsonArray jsonItemArray = json.getJsonArray(JSON_SUBREGIONS);
         for (int i = 0; i < jsonItemArray.size(); i++) {
             JsonObject jsonItem = jsonItemArray.getJsonObject(i);
@@ -199,25 +188,27 @@ public class FileManager implements AppFileComponent
         //progressbar.show("loading", 1);
         for (int i = 0; i < jsonSubregionsArray.size(); i++) 
         {
-            
+            dataManager.addSubregions(i);
             JsonObject json1 = jsonSubregionsArray.getJsonObject(i);
-            JsonArray jsonSubregionsPolygonsArray = json1.getJsonArray(SUBREGION_POLYGONS);
-
+            JsonArray jsonSubregionsPolygonsArray = json1.getJsonArray(SUBREGION_POLYGONS); //8
+            
             for(int j = 0; j < jsonSubregionsPolygonsArray.size(); j++)
             {
                 JsonArray items = jsonSubregionsPolygonsArray.getJsonArray(j);
-
-                dataManager.addSubregionsPolygon(items.size());
+                total += items.size();
+                
                 //System.out.println(items);
-                dataManager.addSubregions(j);
                 for(int k = 0; k  < items.size(); k++)
                 {
-                    
+                        
                     JsonObject jsonItem = items.getJsonObject(k);
                     dataManager.addArrayX(getDataAsDouble(jsonItem,"X"));
                     dataManager.addArrayY(getDataAsDouble(jsonItem,"Y"));
+                    
                 }
-            }  
+            }
+            dataManager.addSubregionsPolygon(total);
+            total = 0;
         }
         
     }
@@ -316,22 +307,22 @@ public class FileManager implements AppFileComponent
         DataManager dataManager = (DataManager)data;
 	dataManager.reset();
         
-        
+        //5 - 2088
         JsonObject jsons = loadJSONFile(filePath);
-        JsonArray jsonSubregionsArray = jsons.getJsonArray(SUBREGIONS);
+        JsonArray jsonSubregionsArray = jsons.getJsonArray(SUBREGIONS); //8
+        //System.out.println(jsonSubregionsArray.size());
         for (int i = 0; i < jsonSubregionsArray.size(); i++) 
         {
-
+            dataManager.addSubregions(i);
             JsonObject json1 = jsonSubregionsArray.getJsonObject(i);
             JsonArray jsonSubregionsPolygonsArray = json1.getJsonArray(SUBREGION_POLYGONS);
-
+            //System.out.println(jsonSubregionsPolygonsArray.size());
             for(int j = 0; j < jsonSubregionsPolygonsArray.size(); j++)
             {
+                
                 JsonArray items = jsonSubregionsPolygonsArray.getJsonArray(j);
+                total += items.size();
 
-                dataManager.addSubregionsPolygon(items.size());
-                //System.out.println(items);
-                dataManager.addSubregions(j);
                 for(int k = 0; k  < items.size(); k++)
                 {
                     
@@ -339,8 +330,14 @@ public class FileManager implements AppFileComponent
                     dataManager.addArrayX(getDataAsDouble(jsonItem,"X"));
                     dataManager.addArrayY(getDataAsDouble(jsonItem,"Y"));
                 }
-            }  
+            
+            }
+            //System.out.println(total);
+            dataManager.addSubregionsPolygon(total);
+            total = 0;
+            
         }
+        //System.out.println(dataManager.getArrayX().size());
     }
 
     

@@ -151,9 +151,9 @@ public class RegioVincoMapEditorController
         editSubregionDialog.next.setOnMouseClicked(e ->{
             
             int index = dataManager.getItems().indexOf(workspace.getTable().getSelectionModel().getSelectedItem());
-            System.out.println(index);
+            //System.out.println(index);
             //editSubregionDialog.next.setDisable(false);
-            if(index == 5)
+            if(index == dataManager.getItems().size()-2)
                 editSubregionDialog.next.setDisable(true);
             else
                 editSubregionDialog.next.setDisable(false);
@@ -257,7 +257,7 @@ public class RegioVincoMapEditorController
             currentSubregions.setName(editSubregionDialog.name.getText());
             currentSubregions.setCapital(editSubregionDialog.capital.getText());
             currentSubregions.setLeader(editSubregionDialog.leader.getText());
-
+ 
         }
         else
         {

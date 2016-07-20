@@ -34,6 +34,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import static javafx.scene.paint.Color.BLUE;
 import properties_manager.PropertiesManager;
 import regiovincomapeditor.controller.RegioVincoMapEditorController;
 import saf.AppTemplate;
@@ -66,10 +67,8 @@ public class Workspace extends AppWorkspaceComponent
     AppGUI gui;
     int count = 0;
     double moveX = 0.0;
-    double moveY = 0.0;
-    int red = 225;
-    int green = 220;
-    int blue = 215;
+    double moveY = 300.0;
+    Group group;
     RegioVincoMapEditorController reigoVincoMapEditorController;
     
     //THE ELEMENTS
@@ -262,29 +261,33 @@ public class Workspace extends AppWorkspaceComponent
     public void reloadWorkspace() 
     {
         mapBox.getChildren().clear();
-        
-        Group group = new Group();
+        Pane pane = new Pane();
+
+        int red = 225;
+        int green = 220;
+        int blue = 215;
+        Color color;
+        group = new Group();
+        group.setLayoutY(300);
         FileManager fileManager = (FileManager)app.getFileComponent();
         DataManager dataManager = (DataManager)app.getDataComponent();
         double x = 0.0;
         double y = 0.0;
-
+        
         for(int c = 0; c < dataManager.getArrayX().size();c++)
         {
             x = ((reScaleX(180 + dataManager.getArrayX().get(c)) * gui.getPrimaryScene().getWidth())/2);
             y = ((reScaleY(90 - dataManager.getArrayY().get(c)) * gui.getPrimaryScene().getHeight())-200);
             dataManager.addcoordinateX(x);
-            dataManager.addcoordinateY(y);
-
-            
+            dataManager.addcoordinateY(y);        
         }
-
         boolean empty = dataManager.getItems().isEmpty();
         for(int i = 0; i < dataManager.getSubregions().size(); i++)
         {
             Polyline polyline = new Polyline();
-            int b =  (int) dataManager.getSubregionsPolygon().get(i);
             
+            int b =  (int) dataManager.getSubregionsPolygon().get(i);
+            //System.out.println(b);
             for(int j = 0; j < b; j++)
             {
                 polyline.getPoints().addAll(dataManager.getcoordinateX().get(count),dataManager.getcoordinateY().get(count));
@@ -301,7 +304,18 @@ public class Workspace extends AppWorkspaceComponent
                 String subregionCapital = "subregion_capital " + (i+1);
                 String subregionLeader = "subregion_leader " + (i+1);
                 Subregions subregion = new Subregions(subregionName, subregionCapital,subregionLeader, red,green,blue);
-                Color color = Color.rgb(red,green,blue);
+                subregion.getPolyline().add(polyline);
+                //System.out.println(subregion.getPolyline().toString());
+                /*
+                if(subregion.getPolyline().isEmpty())
+                    subregion.getPolyline().add(polyline);
+                else
+                {
+                    System.out.println("Im here");
+                    subregion.reset();
+                    subregion.getPolyline().add(polyline);
+                }*/
+                color = Color.rgb(red,green,blue);
                 polyline.setFill(color);
                 red -= 5;
                 green -= 5;
@@ -314,13 +328,44 @@ public class Workspace extends AppWorkspaceComponent
                 red = dataManager.getItems().get(i).getRed();
                 green = dataManager.getItems().get(i).getGreen();
                 blue = dataManager.getItems().get(i).getBlue();
-                Color color = Color.rgb(red,green,blue);
+                color = Color.rgb(red,green,blue);
+                dataManager.getItems().get(i).getPolyline().add(polyline);
                 polyline.setFill(color);
                 red -= 5;
                 green -= 5;
                 blue -= 5;
                 
             }
+            polyline.setOnMouseClicked(e -> {
+                if(e.getButton() == MouseButton.PRIMARY)
+                {
+
+                    for(int a = 0; a < dataManager.getItems().size(); a++)
+                    {
+                            int newred = dataManager.getItems().get(a).getRed();
+                            int newgreen = dataManager.getItems().get(a).getGreen();
+                            int newblue = dataManager.getItems().get(a).getBlue();
+                            Color newcolor = Color.rgb(newred,newgreen,newblue);
+                            Node node = group.getChildren().get(a);
+       
+                            Polyline p = (Polyline) node;
+                            p.setFill(newcolor);
+  
+                    }
+                    for(int z = 0; z < dataManager.getItems().size(); z++)
+                    {
+                        
+
+                        if(e.getSource().toString().equals(dataManager.getItems().get(z).getPolyline().get(0).toString()))
+                        {
+                            polyline.setFill(LIGHTGREEN);
+                            subregionTable.getSelectionModel().select(z);   
+                            
+                        }
+
+                    }
+                }
+            });
             changeBorderThickness.valueProperty().addListener(new ChangeListener<Number>(){
 
                 @Override
@@ -363,7 +408,32 @@ public class Workspace extends AppWorkspaceComponent
 
         }//END OF FOR
         //System.out.println(dataManager.getParentDirectory() + "/" + dataManager.getName());
-        
+        mapBox.setOnMouseClicked(e -> {
+            app.getGUI().getAppPane().requestFocus();
+        });
+        gui.getAppPane().setOnKeyPressed(e -> {
+            
+                switch (e.getCode())
+                {
+                    case UP : 
+                        moveY = moveY + 15;
+                        group.setLayoutY(moveY);
+                        break;
+                    case DOWN : 
+                        moveY = moveY - 15;
+                        group.setLayoutY(moveY);
+                        
+                        break;
+                    case LEFT : 
+                        moveX = moveX + 15;
+                        group.setLayoutX(moveX);
+                        break;
+                    case RIGHT : 
+                        moveX = moveX - 15;
+                        group.setLayoutX(moveX);
+                        break;
+                }
+                });
         try {
                 fileManager.saveData(dataManager, dataManager.getParentDirectory() + "/" + dataManager.getName() + "/" + dataManager.getName());
                 //fileManager.saveData(dataManager, "./work/1/2");
@@ -373,7 +443,9 @@ public class Workspace extends AppWorkspaceComponent
                 Logger.getLogger(Workspace.class.getName()).log(Level.SEVERE, null, ex);}
         group.setScaleX(group.getScaleX() * dataManager.getZoomLevel());
         group.setScaleY(group.getScaleY() * dataManager.getZoomLevel());
-        mapBox.getChildren().add(group);
+        pane.getChildren().add(group);
+        mapBox.getChildren().add(pane);
+        
         mapBox.setStyle("-fx-background-color: " + dataManager.getBackGroundColor());
         count = 0;
 
@@ -440,9 +512,33 @@ public class Workspace extends AppWorkspaceComponent
              
             if (e.getClickCount() == 1) 
             { 
-                //System.out.println("I click once");
                 int index = dataManager.getItems().indexOf(subregionTable.getSelectionModel().getSelectedItem());
-                //System.out.println(index);
+                
+                    for(int a = 0; a < dataManager.getItems().size(); a++)
+                    {
+                            int newred = dataManager.getItems().get(a).getRed();
+                            int newgreen = dataManager.getItems().get(a).getGreen();
+                            int newblue = dataManager.getItems().get(a).getBlue();
+                            Color newcolor = Color.rgb(newred,newgreen,newblue);
+                            Node node = group.getChildren().get(a);
+       
+                            Polyline p = (Polyline) node;
+                            p.setFill(newcolor);
+  
+                    }
+                for(int z = 0; z < dataManager.getItems().size(); z++)
+                {
+                        
+
+                        if(group.getChildren().get(z).toString().equals(dataManager.getItems().get(index).getPolyline().get(0).toString()))
+                        {
+                            Node node = group.getChildren().get(z);
+                            Polyline p = (Polyline) node;
+                            p.setFill(LIGHTGREEN);
+
+                        }
+
+                    }
             }
             else if (e.getClickCount() == 2 && rightPlace)  
             {

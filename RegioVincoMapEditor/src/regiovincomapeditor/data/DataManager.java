@@ -211,6 +211,7 @@ public class DataManager implements AppDataComponent {
         
         subregion.clear();
         
+        
     }
     
     public boolean haveCapitals()

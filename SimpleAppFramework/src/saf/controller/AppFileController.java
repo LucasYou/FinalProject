@@ -128,10 +128,13 @@ public class AppFileController {
                 String selection = newMapDialog.getSelection();
                 if (selection.equals(newMapDialog.OK))
                 {
+                     
                      newMapDialog.setFileName(newMapDialog.getName().getText());
                      File file = new File(newMapDialog.getDirectoryPath() + "/" + newMapDialog.getFileName());
                      path = newMapDialog.getDirectoryPath() + "/" + newMapDialog.getFileName();
                      newMapDialog.setCurrentPath(file);
+                     
+                     
                      if(file.exists() == true)
                      {
                         Alert alert = new Alert(AlertType.INFORMATION);
