@@ -32,7 +32,7 @@ public class DataManager implements AppDataComponent {
     
     String Name;
     String ParentDirectory;
-    String BackGroundColor = "#ff6600";
+    String BackGroundColor;
     String BorderColor;
     String MapPath;
     String ImagePath;
@@ -60,8 +60,8 @@ public class DataManager implements AppDataComponent {
         subregions_polygon = new ArrayList();
         Name = "";
         ParentDirectory = "";
-        //BackGroundColor = "#ff6600";
-        BorderColor = "";
+        BackGroundColor = "ff6600";
+        BorderColor = "0x000000ff";
         MapPath = "";
         ImagePath = "";
         ImageX = 0.0;
@@ -85,8 +85,8 @@ public class DataManager implements AppDataComponent {
         subregions_polygon = new ArrayList();
         Name = "";
         ParentDirectory = "";
-        BackGroundColor = "#ff6600";
-        BorderColor = "";
+        BackGroundColor = "ff6600";
+        BorderColor = "0x000000ff";
         MapPath = "";
         ImagePath = "";
         ImageX = 0.0;
@@ -196,8 +196,8 @@ public class DataManager implements AppDataComponent {
         
         Name = newMapDialog.getFileName();
         ParentDirectory = newMapDialog.getDirectoryPath();
-        BackGroundColor = "#ff6600";
-        BorderColor = "#000000";
+        BackGroundColor = "ff6600";
+        BorderColor = "0x000000ff";
         MapPath = newMapDialog.getDataPath();
         ImagePath = newMapDialog.getDirectoryPath();
         ImageX = 0.0;

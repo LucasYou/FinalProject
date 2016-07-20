@@ -3,7 +3,7 @@
     "name":"Andorra",
     "parent directory":"C:\\WORKSPACE\\CSE219\\Final Project\\RegioVincoMapEditor\\work",
     "back-ground color":"#ff6600",
-    "border color":"#000000",
+    "border color":"0x000000ff",
     "map path":"C:\\WORKSPACE\\CSE219\\Final Project\\RegioVincoMapEditor\\HW5SampleData\\raw_map_data\\Andorra.json",
     "image path":"C:\\WORKSPACE\\CSE219\\Final Project\\RegioVincoMapEditor\\work",
     "image x":0.0,

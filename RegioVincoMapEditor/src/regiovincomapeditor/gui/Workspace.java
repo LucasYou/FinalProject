@@ -13,6 +13,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
@@ -47,10 +49,12 @@ import static saf.settings.AppStartupConstants.FILE_PROTOCOL;
 import static saf.settings.AppStartupConstants.PATH_IMAGES;
 import javafx.scene.shape.Polyline;
 import static javafx.scene.paint.Color.LIGHTGREEN;
+import static javafx.scene.paint.Color.valueOf;
 import javafx.scene.shape.Polygon;
 import javafx.stage.FileChooser;
 import regiovincomapeditor.file.FileManager;
 import static saf.settings.AppStartupConstants.PATH_WORK;
+import javafx.scene.paint.Paint;
 
 
 /**
@@ -296,6 +300,7 @@ public class Workspace extends AppWorkspaceComponent
             }
             //polyline.setFill(LIGHTGREEN);
             polyline.setStrokeWidth(dataManager.getBorderThickness());
+            polyline.setStroke(valueOf(dataManager.getBorderColor()));
             group.getChildren().add(polyline);
             if(empty)
             {
@@ -446,7 +451,7 @@ public class Workspace extends AppWorkspaceComponent
         pane.getChildren().add(group);
         mapBox.getChildren().add(pane);
         
-        mapBox.setStyle("-fx-background-color: " + dataManager.getBackGroundColor());
+        mapBox.setStyle("-fx-background-color: #" + dataManager.getBackGroundColor());
         count = 0;
 
     }
@@ -547,6 +552,25 @@ public class Workspace extends AppWorkspaceComponent
             }
      });
          
+        changeBorderColor.setOnAction(e ->{
+                for(int i = 0; i < dataManager.getItems().size(); i++)
+                {
+                    Node node = group.getChildren().get(i);
+                    Polyline p = (Polyline) node;
+                    p.setStroke(changeBorderColor.getValue());
+                    
+                }
+                dataManager.setBorderColor(changeBorderColor.getValue().toString());
+                //System.out.println(changeBorderColor.getValue().toString());
+        });
+        
+        changeBGColor.setOnAction(e ->{
+            
+            String hex = Integer.toHexString(changeBGColor.getValue().hashCode()); 
+            mapBox.setStyle("-fx-background-color: #" + hex);
+            //System.out.println(hex1);
+            dataManager.setBackGroundColor(hex);
+        });
      }
     
     public TableView<Subregions> getTable()
