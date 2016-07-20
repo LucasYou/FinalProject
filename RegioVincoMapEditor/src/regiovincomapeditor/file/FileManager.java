@@ -15,6 +15,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 import javafx.collections.ObservableList;
@@ -35,6 +36,7 @@ import properties_manager.PropertiesManager;
 import regiovincomapeditor.data.DataManager;
 import regiovincomapeditor.data.Subregions;
 import saf.AppTemplate;
+import saf.Progressbar;
 import saf.components.AppDataComponent;
 import saf.components.AppFileComponent;
 import static saf.settings.AppPropertyType.SAVE_WORK_TITLE;
@@ -64,7 +66,6 @@ public class FileManager implements AppFileComponent
     static final String JSON_RED = "red";
     static final String JSON_GREEN = "green";
     static final String JSON_BLUE = "blue";
-    static final String JSON_IMAGEPATH = "image path";
 
     
     
@@ -73,14 +74,14 @@ public class FileManager implements AppFileComponent
     static final String JSON_BorderColor = "border color";
     static final String JSON_MapPath = "map path";
     static final String JSON_ImagePath = "image path";
-    static final String JSON_ImageX = "image location x";
-    static final String JSON_ImageY = "image location y";
+    static final String JSON_ImageX = "image x";
+    static final String JSON_ImageY = "image y";
     static final String JSON_Width = "width";
     static final String JSON_Height = "height";
     static final String JSON_BorderThickness = "border thickness";
     static final String JSON_ZoomLevel = "zoom level";
-    static final String JSON_ScrollX = "scroll location x";
-    static final String JSON_ScrollY = "scroll location y";
+    static final String JSON_ScrollX = "scroll x";
+    static final String JSON_ScrollY = "scroll y";
     
     static final String JSON_SUBREGIONS = "subregions";
     
@@ -118,7 +119,7 @@ public class FileManager implements AppFileComponent
                 .add(JSON_ImageY, dataManager.getImageY())
                 .add(JSON_Width, dataManager.getWidth())
                 .add(JSON_Height, dataManager.getHeight())
-                .add(JSON_BorderThickness, dataManager.getBorderThickness())
+                .add(JSON_BorderThickness, Double.toString(dataManager.getBorderThickness()))
                 .add(JSON_ZoomLevel, dataManager.getZoomLevel())
                 .add(JSON_ScrollX, dataManager.getScrollX())
                 .add(JSON_ScrollY, dataManager.getScrollY())
@@ -148,14 +149,57 @@ public class FileManager implements AppFileComponent
     {
         //CLEAR THE OLD DATA
         DataManager dataManager = (DataManager)data;
-        dataManager.reset();
+        dataManager.reset();    
         
-        //LOAD MAP
         JsonObject json = loadJSONFile(filePath);
-        JsonArray jsonSubregionsArray = json.getJsonArray(SUBREGIONS);
+        
+        String Name = json.getString(JSON_NAME);
+        String ParentDirectory = json.getString(JSON_ParentDirectory);
+        String BackGroundColor = json.getString(JSON_BackGroundColor);
+        String BorderColor = json.getString(JSON_BorderColor);
+        String MapPath = json.getString(JSON_MapPath);
+        String ImagePath = json.getString(JSON_ImagePath);
+        double ImageX = json.getInt(JSON_ImageX);
+        double ImageY = json.getInt(JSON_ImageY);
+        int Width = json.getInt(JSON_Width);
+        int Height = json.getInt(JSON_Height);
+        String BorderThickness = json.getString(JSON_BorderThickness);
+        int ZoomLevel = json.getInt(JSON_ZoomLevel);
+        int ScrollX = json.getInt(JSON_ScrollX);
+        int ScrollY = json.getInt(JSON_ScrollY);
+
+        
+        dataManager.setName(Name);
+        dataManager.setParentDirectory(ParentDirectory);
+        dataManager.setBackGroundColor(BackGroundColor);
+        dataManager.setBorderColor(BorderColor);
+        dataManager.setMapPath(MapPath);
+        dataManager.setImagePath(ImagePath);
+        dataManager.setImageX(ImageX);
+        dataManager.setImageY(ImageY);
+        dataManager.setWidth(Width);
+        dataManager.setHeight(Height);
+        dataManager.setBorderThickness(Double.parseDouble(BorderThickness));
+        dataManager.setZoomLevel(ZoomLevel);
+        dataManager.setScrollX(ScrollX);
+        dataManager.setScrollY(ScrollY);
+        
+        JsonArray jsonItemArray = json.getJsonArray(JSON_SUBREGIONS);
+        for (int i = 0; i < jsonItemArray.size(); i++) {
+            JsonObject jsonItem = jsonItemArray.getJsonObject(i);
+            Subregions subregions = loadItem(jsonItem);
+            dataManager.addItem(subregions);
+        }
+        
+        
+        
+        JsonObject jsons = loadJSONFile(dataManager.getMapPath());
+        JsonArray jsonSubregionsArray = jsons.getJsonArray(SUBREGIONS);
+        
+        //progressbar.show("loading", 1);
         for (int i = 0; i < jsonSubregionsArray.size(); i++) 
         {
-
+            
             JsonObject json1 = jsonSubregionsArray.getJsonObject(i);
             JsonArray jsonSubregionsPolygonsArray = json1.getJsonArray(SUBREGION_POLYGONS);
 
@@ -175,55 +219,7 @@ public class FileManager implements AppFileComponent
                 }
             }  
         }
-        //LOAD UI
         
-        
-    }
-    public void loadUI(AppDataComponent data, String filePath) throws IOException 
-    {
-        DataManager dataManager = (DataManager)data;
-        dataManager.reset();
-        
-        JsonObject json = loadJSONFile(filePath);
-        
-        String Name = json.getString(JSON_NAME);
-        String ParentDirectory = json.getString(JSON_ParentDirectory);
-        String BackGroundColor = json.getString(JSON_BackGroundColor);
-        String BorderColor = json.getString(JSON_BorderColor);
-        String MapPath = json.getString(JSON_MapPath);
-        String ImagePath = json.getString(JSON_ImagePath);
-        double ImageX = json.getInt(JSON_ImageX);
-        double ImageY = json.getInt(JSON_ImageY);
-        int Width = json.getInt(JSON_Width);
-        int Height = json.getInt(JSON_Height);
-        int BorderThickness = json.getInt(JSON_BorderThickness);
-        int ZoomLevel = json.getInt(JSON_ZoomLevel);
-        double ScrollX = json.getInt(JSON_ScrollX);
-        double ScrollY = json.getInt(JSON_ScrollY);
-
-        
-        dataManager.setName(Name);
-        dataManager.setParentDirectory(ParentDirectory);
-        dataManager.setBackGroundColor(BackGroundColor);
-        dataManager.setBorderColor(BorderColor);
-        dataManager.setMapPath(MapPath);
-        dataManager.setImageX(ImageX);
-        dataManager.setImageY(ImageY);
-        dataManager.setImagePath(ImagePath);
-        dataManager.setWidth(Width);
-        dataManager.setHeight(Height);
-        dataManager.setBorderThickness(BorderThickness);
-        dataManager.setZoomLevel(ZoomLevel);
-        dataManager.setScrollX(ScrollX);
-        dataManager.setScrollY(ScrollY);
-        
-        JsonArray jsonItemArray = json.getJsonArray(JSON_SUBREGIONS);
-        for (int i = 0; i < jsonItemArray.size(); i++) {
-            JsonObject jsonItem = jsonItemArray.getJsonObject(i);
-            Subregions subregions = loadItem(jsonItem);
-            dataManager.addItem(subregions);
-        }
-
     }
     
     public Subregions loadItem(JsonObject jsonItem) {
@@ -243,8 +239,50 @@ public class FileManager implements AppFileComponent
 
 
     @Override
-    public void exportData(AppDataComponent data, String filePath) throws IOException {
-
+    public void exportData(AppDataComponent data, String filePath) throws IOException 
+    {
+        
+        DataManager dataManager = (DataManager)data;
+        JsonArrayBuilder arrayBuilder = Json.createArrayBuilder();
+        ObservableList<Subregions> subregions = dataManager.getItems();
+        
+        for (Subregions subregion : subregions) {	    
+	    JsonObjectBuilder itemJson = Json.createObjectBuilder()
+		    .add(JSON_NAME, subregion.getName())
+		    .add(JSON_CAPITAL, subregion.getCapital())
+                    .add(JSON_LEADER, subregion.getLeader())
+                    .add(JSON_RED, subregion.getRed())
+                    .add(JSON_GREEN, subregion.getRed())
+                    .add(JSON_BLUE, subregion.getRed());
+	    arrayBuilder.add(itemJson);
+	}
+        
+	JsonArray itemsArray = arrayBuilder.build();
+        
+        JsonObject dataManagerJSO = Json.createObjectBuilder()
+		.add(JSON_NAME, dataManager.getName())
+                .add(JSON_SUBREGIONS_HAVE_CAPITALS, dataManager.haveCapitals())
+                .add(JSON_SUBREGIONS_HAVE_FLAGS, dataManager.haveFlags())
+                .add(JSON_SUBREGIONS_HAVE_LEADERS, dataManager.haveLeaders())
+		.add(JSON_SUBREGIONS, itemsArray)
+		.build(); 
+        
+        Map<String, Object> properties = new HashMap<>(1);
+	properties.put(JsonGenerator.PRETTY_PRINTING, true);
+	JsonWriterFactory writerFactory = Json.createWriterFactory(properties);
+	StringWriter sw = new StringWriter();
+	JsonWriter jsonWriter = writerFactory.createWriter(sw);
+	jsonWriter.writeObject(dataManagerJSO);
+	jsonWriter.close();
+        
+        
+        OutputStream os = new FileOutputStream(filePath);
+	JsonWriter jsonFileWriter = Json.createWriter(os);
+	jsonFileWriter.writeObject(dataManagerJSO);
+	String prettyPrinted = sw.toString();
+	PrintWriter pw = new PrintWriter(filePath);
+	pw.write(prettyPrinted);
+	pw.close();
     }
 
     @Override
@@ -273,9 +311,36 @@ public class FileManager implements AppFileComponent
 	return json;
     }
     
-    public void Display()
+    public void loadMap(AppDataComponent data, String filePath) throws IOException
     {
+        DataManager dataManager = (DataManager)data;
+	dataManager.reset();
         
+        
+        JsonObject jsons = loadJSONFile(filePath);
+        JsonArray jsonSubregionsArray = jsons.getJsonArray(SUBREGIONS);
+        for (int i = 0; i < jsonSubregionsArray.size(); i++) 
+        {
+
+            JsonObject json1 = jsonSubregionsArray.getJsonObject(i);
+            JsonArray jsonSubregionsPolygonsArray = json1.getJsonArray(SUBREGION_POLYGONS);
+
+            for(int j = 0; j < jsonSubregionsPolygonsArray.size(); j++)
+            {
+                JsonArray items = jsonSubregionsPolygonsArray.getJsonArray(j);
+
+                dataManager.addSubregionsPolygon(items.size());
+                //System.out.println(items);
+                dataManager.addSubregions(j);
+                for(int k = 0; k  < items.size(); k++)
+                {
+                    
+                    JsonObject jsonItem = items.getJsonObject(k);
+                    dataManager.addArrayX(getDataAsDouble(jsonItem,"X"));
+                    dataManager.addArrayY(getDataAsDouble(jsonItem,"Y"));
+                }
+            }  
+        }
     }
 
     

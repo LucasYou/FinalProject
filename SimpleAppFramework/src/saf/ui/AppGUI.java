@@ -1,5 +1,8 @@
 package saf.ui;
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -200,6 +203,15 @@ public class AppGUI implements AppStyleArbiter {
         });
         exitButton.setOnAction(e -> {
             fileController.handleExitRequest();
+        });
+        
+        exportButton.setOnAction(e -> {
+            try {
+                fileController.handleExportRequest();
+            } catch (IOException ex) {
+                Logger.getLogger(AppGUI.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
         });	
     }
 

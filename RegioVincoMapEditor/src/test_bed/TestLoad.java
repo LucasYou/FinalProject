@@ -1,13 +1,5 @@
+
 package test_bed;
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-
-
 
 import java.io.IOException;
 import regiovincomapeditor.data.DataManager;
@@ -24,20 +16,20 @@ public class TestLoad
     
     public static void main(String[] args) throws IOException
     {
-        filemanager.loadUI(dataManager, "./work/Andorra");
+        filemanager.loadData(dataManager, "./work/Andorra");
         
         dataManager.Print();
         
         System.out.println();
         System.out.println();
         
-        filemanager.loadUI(dataManager, "./work/San Marino");
+        filemanager.loadData(dataManager, "./work/San Marino");
         dataManager.Print();
         
         System.out.println();
         System.out.println();
         
-        filemanager.loadUI(dataManager, "./work/Slovakia");
+        filemanager.loadData(dataManager, "./work/Slovakia");
         dataManager.Print();
 
     }
@@ -45,5 +37,4 @@ public class TestLoad
     
     }
     
-
 

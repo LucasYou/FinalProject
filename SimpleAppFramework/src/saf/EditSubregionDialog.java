@@ -1,5 +1,7 @@
 package saf;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import static javafx.geometry.Pos.CENTER;
@@ -43,19 +45,19 @@ public class EditSubregionDialog extends Stage implements AppStyleArbiter{
 
     
     //GUI CONTROLS
-    Button previous = new Button();
-    Button next = new Button();
+    public Button previous = new Button();
+    public Button next = new Button();
     Button okButton;
     Button cancelButton;
-    TextField name = new TextField();
-    TextField capital = new TextField();
-    TextField leader = new TextField();
+    public TextField name = new TextField();
+    public TextField capital = new TextField();
+    public TextField leader = new TextField();
     
-    Image flag;
-    ImageView flagView = new ImageView();
+    public Image flag;
+    public ImageView flagView = new ImageView();
     
-    Image leaderPic;
-    ImageView leaderPicView = new ImageView();
+    public Image leaderPic;
+    public ImageView leaderPicView = new ImageView();
     
     Image left;
     
@@ -67,7 +69,7 @@ public class EditSubregionDialog extends Stage implements AppStyleArbiter{
     
     static final String BUTTON = "button";
     public static final String OK = "Ok";
-    public static final String CANCEL = "Cancel";
+    public static final String CANCEL = "Close";
     Scene messageScene;
 
     private EditSubregionDialog() {}
@@ -86,7 +88,16 @@ public class EditSubregionDialog extends Stage implements AppStyleArbiter{
         
         okButton = new Button(OK_BUTTON_LABEL);
         cancelButton = new Button(CLOSE_BUTTON_LABEL);
-        PropertiesManager props = PropertiesManager.getPropertiesManager();
+        //cancelButton.setOnAction(e->{ EditSubregionDialog.this.close(); });
+
+        EventHandler yesNoCancelHandler = (EventHandler<ActionEvent>) (ActionEvent ae) -> {
+            Button sourceButton = (Button)ae.getSource();
+            EditSubregionDialog.this.selection = sourceButton.getText();
+            EditSubregionDialog.this.hide();
+        };
+        
+        okButton.setOnAction(yesNoCancelHandler);
+        cancelButton.setOnAction(yesNoCancelHandler);
         boolean success = loadProperties(SIMPLE_APP_PROPERTIES_FILE_NAME)&& loadProperties(WORKSPACE_PROPERTIES_FILE_NAME);  
 	if (success) {
         
@@ -151,6 +162,10 @@ public class EditSubregionDialog extends Stage implements AppStyleArbiter{
     
     public void reset()
     {
+        name.setText("");
+        capital.setText("");
+        leader.setText("");
+        
 
     }
     public void show(String title) {

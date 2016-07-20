@@ -10,12 +10,13 @@ import javafx.beans.property.StringProperty;
  */
 public class Subregions 
 {
-    public static final String DEFAULT_NAME = "NULL";
-    public static final String DEFAULT_CAPITAL = "NULL";
-    public static final String DEFAULT_LEADER = "NULL";
+    public static final String DEFAULT_NAME = "";
+    public static final String DEFAULT_CAPITAL = "";
+    public static final String DEFAULT_LEADER = "";
     public static final int DEFAULT_RED = 0;
     public static final int DEFAULT_GREEN = 0;
     public static final int DEFAULT_BLUE = 0;
+    
     
     final StringProperty Names;
     final StringProperty Capitals;
@@ -24,7 +25,6 @@ public class Subregions
     final IntegerProperty Red;
     final IntegerProperty Green;
     final IntegerProperty Blue;
-    
     
     public Subregions()
     {
@@ -36,6 +36,7 @@ public class Subregions
         Blue = new SimpleIntegerProperty(DEFAULT_BLUE);
     }
     
+    //WITH ALL
     public Subregions(String initNames, String initCapitals, String initLeader, int red, int green, int blue)
     {
         this();
@@ -45,6 +46,28 @@ public class Subregions
         Red.set(red);
         Green.set(green);
         Blue.set(blue);
+        
+    }
+    
+    //WITHOUT CAPITAL
+    public Subregions(String initNames, String initLeader, int red, int green, int blue)
+    {
+        this();
+        Names.set(initNames);
+        Leaders.set(initLeader);
+        Red.set(red);
+        Green.set(green);
+        Blue.set(blue);   
+    }
+    
+    //WITHOUT CAPITAL AND LEADER
+    public Subregions(String initNames, int red, int green, int blue)
+    {
+        this();
+        Names.set(initNames);
+        Red.set(red);
+        Green.set(green);
+        Blue.set(blue);   
     }
     
     
@@ -73,16 +96,9 @@ public class Subregions
     public void setBlue(int value){Blue.set(value);}
     public IntegerProperty BluePreperty(){return Blue;}
     
-
-    
     public void reset()
     {
-        setName(DEFAULT_NAME);
-        setCapital(DEFAULT_CAPITAL);
-        setLeader(DEFAULT_LEADER);
-        setRed(DEFAULT_RED);
-        setGreen(DEFAULT_GREEN);
-        setBlue(DEFAULT_BLUE);
+
         
     }
     

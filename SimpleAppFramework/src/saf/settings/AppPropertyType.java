@@ -201,5 +201,10 @@ public enum AppPropertyType {
     /**
      *
      */
-    PROPERTIES_
+    PROPERTIES,
+    EXPORT_WORK_TITLE,
+    WORK_EXPORT_MESSAGE,
+    EXPORT_COMPLETED_MESSAGE,
+    EXPORT_COMPLETED_TITLE,
+    
 }

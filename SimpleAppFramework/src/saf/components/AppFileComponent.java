@@ -45,4 +45,7 @@ public interface AppFileComponent {
      * @throws IOException
      */
     public void importData(AppDataComponent data, String filePath) throws IOException;
+
+    public void loadMap(AppDataComponent data, String filePath) throws IOException;
+
 }

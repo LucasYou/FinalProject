@@ -5,10 +5,12 @@
  */
 package regiovincomapeditor.data;
 
+import java.io.File;
 import java.util.ArrayList;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import saf.AppTemplate;
+import saf.NewMapDialog;
 import saf.components.AppDataComponent;
 
 /**
@@ -39,10 +41,10 @@ public class DataManager implements AppDataComponent {
     
     int Width;
     int Height;
-    int BorderThickness;
+    double BorderThickness;
     int ZoomLevel;
-    double ScrollX;
-    double ScrollY;
+    int ScrollX;
+    int ScrollY;
     
     
     
@@ -56,7 +58,7 @@ public class DataManager implements AppDataComponent {
         coordinateY = new ArrayList();
         subregions = new ArrayList();
         subregions_polygon = new ArrayList();
-        Name = "default map name";
+        Name = "";
         ParentDirectory = "";
         //BackGroundColor = "#ff6600";
         BorderColor = "";
@@ -66,21 +68,12 @@ public class DataManager implements AppDataComponent {
         ImageY = 0.0;
         Width = 802;
         Height = 536;
-        BorderThickness = 1;
-        ZoomLevel = 1; 
-        ScrollX = 0.0;
-        ScrollY = 0.0;
-        /*
-        Subregions China = new Subregions("China", "Bei Jing", "Xi");
-        Subregions America = new Subregions("United States", "Washington", "Obama");
-        Subregions England = new Subregions("England", "London", "Cameron");
-        
-        addItem(China);
-        addItem(America);
-        addItem(England);
-        */
-        
+        BorderThickness = 0.001;
+        ZoomLevel = 50; 
+        ScrollX = 0;
+        ScrollY = 0;    
     }
+    
 
     public DataManager() {
         subregion = FXCollections.observableArrayList();
@@ -90,9 +83,9 @@ public class DataManager implements AppDataComponent {
         coordinateY = new ArrayList();
         subregions = new ArrayList();
         subregions_polygon = new ArrayList();
-        Name = "default map name";
+        Name = "";
         ParentDirectory = "";
-        //BackGroundColor = "#ff6600";
+        BackGroundColor = "#ff6600";
         BorderColor = "";
         MapPath = "";
         ImagePath = "";
@@ -100,10 +93,11 @@ public class DataManager implements AppDataComponent {
         ImageY = 0.0;
         Width = 802;
         Height = 536;
-        BorderThickness = 1;
-        ZoomLevel = 1; 
-        ScrollX = 0.0;
-        ScrollY = 0.0;
+        BorderThickness = 0.001;
+        ZoomLevel = 50; 
+        ScrollX = 0;
+        ScrollY = 0;
+
         
     }
     
@@ -134,10 +128,10 @@ public class DataManager implements AppDataComponent {
     public void setImageY(double imagey) {ImageY = imagey;}
     public void setWidth(int width) {Width = width;}
     public void setHeight(int height) {Height = height;}
-    public void setBorderThickness(int borderthickness) {BorderThickness = borderthickness;}
+    public void setBorderThickness(double borderthickness) {BorderThickness = borderthickness;}
     public void setZoomLevel(int zoomlevel) {ZoomLevel = zoomlevel;}
-    public void setScrollX(double scrollx) {ScrollX = scrollx;}
-    public void setScrollY(double scrolly) {ScrollY = scrolly;}
+    public void setScrollX(int scrollx) {ScrollX = scrollx;}
+    public void setScrollY(int Scrolly) {ScrollY = Scrolly;}
     
     //GETTER METHODS
     public ArrayList<Double> getArrayX() {return arrayX;}
@@ -151,15 +145,15 @@ public class DataManager implements AppDataComponent {
     public String getBackGroundColor() {return BackGroundColor;}
     public String getBorderColor() {return BorderColor;}
     public String getMapPath() {return MapPath;}
+    public String getImagePath() {return ImagePath;}
     public double getImageX() {return ImageX;}
     public double getImageY() {return ImageY;}
-    public String getImagePath() {return ImagePath;}
     public int getWidth() {return Width;}
     public int getHeight() {return Height;}
-    public int getBorderThickness() {return BorderThickness;}
-    public double getZoomLevel() {return ZoomLevel;}
-    public double getScrollX() {return ScrollX;}
-    public double getScrollY() {return ScrollY;}
+    public double getBorderThickness() {return BorderThickness;}
+    public int getZoomLevel() {return ZoomLevel;}
+    public int getScrollX() {return ScrollX;}
+    public int getScrollY() {return ScrollY;}
     
 
     public void Print()
@@ -192,29 +186,71 @@ public class DataManager implements AppDataComponent {
     public void reset() 
     {
 
+        NewMapDialog newMapDialog = NewMapDialog.getSingleton();
         arrayX.clear();
         arrayY.clear();
         subregions.clear();
         subregions_polygon.clear();
         coordinateX.clear();
         coordinateY.clear();
-        Name = "default map name";
-        ParentDirectory = "";
-        //BackGroundColor = "#ff6600";
-        BorderColor = "";
-        MapPath = "";
-        ImagePath = "";
+        
+        Name = newMapDialog.getFileName();
+        ParentDirectory = newMapDialog.getDirectoryPath();
+        BackGroundColor = "#ff6600";
+        BorderColor = "#000000";
+        MapPath = newMapDialog.getDataPath();
+        ImagePath = newMapDialog.getDirectoryPath();
         ImageX = 0.0;
         ImageY = 0.0;
         Width = 802;
         Height = 536;
-        BorderThickness = 1;
-        ZoomLevel = 1; 
-        ScrollX = 0.0;
-        ScrollY = 0.0;
+        BorderThickness = 0.001;
+        ZoomLevel = 50;
+        ScrollX = 0;
+        ScrollY = 0;
         
         subregion.clear();
         
     }
     
+    public boolean haveCapitals()
+    {
+        if(subregion.isEmpty())
+            return false;
+        for (int i = 0; i <subregion.size(); i++)
+        {
+            if(subregion.get(i).getCapital().equals(""))
+                return false;
+        }
+        
+        return true;
+    }
+    
+    public boolean haveFlags()
+    {
+            if(subregion.isEmpty())
+            return false;
+            for(int i = 0; i < subregion.size(); i++)
+            {
+                File file = new File(ImagePath +"/" + subregion.get(i).getName() + " Flag.png");
+                if(file.exists() == false)
+                    return false;
+                
+            }
+      
+                return true;
+    }
+    
+    public boolean haveLeaders()
+    {
+        if(subregion.isEmpty())
+            return false;
+        for(int i = 0; i < subregion.size(); i++)
+        {
+            File file = new File(ImagePath +"/" + subregion.get(i).getLeader() + ".png");
+            if(file.exists() == false)
+                    return false;
+        }
+        return true;
+    }
 }

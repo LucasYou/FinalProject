@@ -7,10 +7,17 @@ import saf.components.AppFileComponent;
 import saf.components.AppDataComponent;
 import java.io.File;
 import java.io.IOException;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
 import properties_manager.PropertiesManager;
 import saf.AppTemplate;
+import saf.NewMapDialog;
+import saf.Progressbar;
+import static saf.settings.AppPropertyType.EXPORT_COMPLETED_MESSAGE;
+import static saf.settings.AppPropertyType.EXPORT_COMPLETED_TITLE;
+import static saf.settings.AppPropertyType.EXPORT_WORK_TITLE;
 import static saf.settings.AppPropertyType.LOAD_ERROR_MESSAGE;
 import static saf.settings.AppPropertyType.LOAD_ERROR_TITLE;
 import static saf.settings.AppPropertyType.LOAD_WORK_TITLE;
@@ -46,7 +53,9 @@ public class AppFileController {
     
     // THIS IS THE FILE FOR THE WORK CURRENTLY BEING WORKED ON
     File currentWorkFile;
-
+    
+    public static String path;
+    NewMapDialog newMapDialog = NewMapDialog.getSingleton();
     /**
      * This constructor just keeps the app for later.
      * 
@@ -79,10 +88,13 @@ public class AppFileController {
      * already being edited, it will prompt the user to save it first.
      * 
      */
-    public void handleNewRequest() {
+    public void handleNewRequest() 
+    {
 	AppMessageDialogSingleton dialog = AppMessageDialogSingleton.getSingleton();
 	PropertiesManager props = PropertiesManager.getPropertiesManager();
-        try {
+        
+        try 
+        {
             // WE MAY HAVE TO SAVE CURRENT WORK
             boolean continueToMakeNew = true;
             if (!saved) {
@@ -91,16 +103,16 @@ public class AppFileController {
             }
 
             // IF THE USER REALLY WANTS TO MAKE A NEW COURSE
-            if (continueToMakeNew) {
+            if (continueToMakeNew) 
+            {
                 // RESET THE DATA, WHICH SHOULD TRIGGER A RESET OF THE UI
-                app.getDataComponent().reset();        
-
+                //app.getDataComponent().reset();        
+                
 		// LOAD ALL THE DATA INTO THE WORKSPACE
-		app.getWorkspaceComponent().reloadWorkspace();	
-
+			
 		// MAKE SURE THE WORKSPACE IS ACTIVATED
-		app.getWorkspaceComponent().activateWorkspace(app.getGUI().getAppPane());
-		
+
+                
 		// WORK IS NOT SAVED
                 saved = false;
 		currentWorkFile = null;
@@ -108,11 +120,61 @@ public class AppFileController {
                 // REFRESH THE GUI, WHICH WILL ENABLE AND DISABLE
                 // THE APPROPRIATE CONTROLS
                 app.getGUI().updateToolbarControls(saved);
-		app.getWorkspaceComponent().reloadWorkspace();
+		//app.getWorkspaceComponent().reloadWorkspace();
 
                 // TELL THE USER NEW WORK IS UNDERWAY
-		dialog.show(props.getProperty(NEW_COMPLETED_TITLE), props.getProperty(NEW_COMPLETED_MESSAGE));
+                newMapDialog.reset();
+		newMapDialog.show("New Map");
+                String selection = newMapDialog.getSelection();
+                if (selection.equals(newMapDialog.OK))
+                {
+                     newMapDialog.setFileName(newMapDialog.getName().getText());
+                     File file = new File(newMapDialog.getDirectoryPath() + "/" + newMapDialog.getFileName());
+                     path = newMapDialog.getDirectoryPath() + "/" + newMapDialog.getFileName();
+                     newMapDialog.setCurrentPath(file);
+                     if(file.exists() == true)
+                     {
+                        Alert alert = new Alert(AlertType.INFORMATION);
+                        alert.setTitle("WARNING");
+                        alert.setHeaderText(null);
+                        alert.setContentText("Directory already exists");
+                        alert.showAndWait();
+                     }
+                     else
+                     {
+                        Progressbar progressbar = Progressbar.getSingleton();
+                        //MAKE DIRECTORY
+                        file.mkdir();
+                        //MAKE FILE
+                        app.getDataComponent().reset(); 
+                        //app.getFileComponent().saveData(app.getDataComponent(), file.getPath() + "/" + newMapDialog.getName().getText());
+                        
+                        app.getFileComponent().loadMap(app.getDataComponent(), newMapDialog.getData().getText());
+                        
+
+                        app.getWorkspaceComponent().reloadWorkspace();
+                        app.getWorkspaceComponent().activateWorkspace(app.getGUI().getAppPane());
+                        progressbar.show("loading");
+                        
+                        //newMapDialog.reset();
+
+                     }
+                     //fileManager.loadData(dataManager, newMapDialog.getDataPath());
+                     //System.out.println(newMapDialog.getDataPath());
+                     //app.getWorkspaceComponent().reloadWorkspace();
+                     
+                     //RENDER THE MAP                     app.getFileComponent().loadData(app.getDataComponent(), newMapDialog.getData().getText());
+
+
+                
+                    //app.getWorkspaceComponent().activateWorkspace(app.getGUI().getAppPane());
+                }
+                else
+                {
+                    newMapDialog.close();
+                }
             }
+            
         } catch (IOException ioe) {
             // SOMETHING WENT WRONG, PROVIDE FEEDBACK
 	    dialog.show(props.getProperty(NEW_ERROR_TITLE), props.getProperty(NEW_ERROR_MESSAGE));
@@ -129,6 +191,7 @@ public class AppFileController {
         try {
             // WE MAY HAVE TO SAVE CURRENT WORK
             boolean continueToOpen = true;
+            
             if (!saved) {
                 // THE USER CAN OPT OUT HERE WITH A CANCEL
                 continueToOpen = promptToSave();
@@ -137,7 +200,9 @@ public class AppFileController {
             // IF THE USER REALLY WANTS TO OPEN A Course
             if (continueToOpen) {
                 // GO AHEAD AND PROCEED LOADING A Course
+                
                 promptToOpen();
+                //progressbar.show("Loading");
             }
         } catch (IOException ioe) {
             // SOMETHING WENT WRONG
@@ -163,19 +228,25 @@ public class AppFileController {
 		saveWork(currentWorkFile);
 	    }
 	    // OTHERWISE WE NEED TO PROMPT THE USER
+            
 	    else {
 		// PROMPT THE USER FOR A FILE NAME
+                
 		FileChooser fc = new FileChooser();
 		fc.setInitialDirectory(new File(PATH_WORK));
 		fc.setTitle(props.getProperty(SAVE_WORK_TITLE));
-		fc.getExtensionFilters().addAll(
-		new ExtensionFilter(props.getProperty(WORK_FILE_EXT_DESC), props.getProperty(WORK_FILE_EXT)));
+		//fc.getExtensionFilters().addAll(
+		//new ExtensionFilter(props.getProperty(WORK_FILE_EXT_DESC), props.getProperty(WORK_FILE_EXT)));
 
 		File selectedFile = fc.showSaveDialog(app.getGUI().getWindow());
-		if (selectedFile != null) {
+                
+		//if (selectedFile != null) {
 		    saveWork(selectedFile);
 		}
-	    }
+           
+            //System.out.println(newMapDialog.getCurrentPath());
+            //saveWork(newMapDialog.getCurrentPath())
+	    //}
         } catch (IOException ioe) {
 	    AppMessageDialogSingleton dialog = AppMessageDialogSingleton.getSingleton();
 	    dialog.show(props.getProperty(LOAD_ERROR_TITLE), props.getProperty(LOAD_ERROR_MESSAGE));
@@ -226,6 +297,43 @@ public class AppFileController {
                 dialog.show(props.getProperty(SAVE_ERROR_TITLE), props.getProperty(SAVE_ERROR_MESSAGE));
         }
     }
+    
+    public void handleExportRequest() throws IOException
+    {
+        PropertiesManager props = PropertiesManager.getPropertiesManager();
+        try{
+		// PROMPT THE USER FOR A FILE NAME
+		FileChooser fc = new FileChooser();
+		fc.setInitialDirectory(new File(PATH_WORK));
+		fc.setTitle(props.getProperty(EXPORT_WORK_TITLE));
+		fc.getExtensionFilters().addAll(
+		new ExtensionFilter(props.getProperty(WORK_FILE_EXT_DESC), props.getProperty(WORK_FILE_EXT)));
+
+		File selectedFile = fc.showSaveDialog(app.getGUI().getWindow());
+		if (selectedFile != null) {
+		    exportWork(selectedFile);
+		}
+        }
+        catch (IOException ioe) {
+	    AppMessageDialogSingleton dialog = AppMessageDialogSingleton.getSingleton();
+	    dialog.show(props.getProperty(LOAD_ERROR_TITLE), props.getProperty(LOAD_ERROR_MESSAGE));
+        }
+	    
+
+    }
+        private void exportWork(File selectedFile) throws IOException {
+	// SAVE IT TO A FILE
+	app.getFileComponent().exportData(app.getDataComponent(), selectedFile.getPath());
+	
+	
+	// TELL THE USER THE FILE HAS BEEN SAVED
+	AppMessageDialogSingleton dialog = AppMessageDialogSingleton.getSingleton();
+	PropertiesManager props = PropertiesManager.getPropertiesManager();
+        dialog.show(props.getProperty(EXPORT_COMPLETED_TITLE),props.getProperty(EXPORT_COMPLETED_MESSAGE));
+		    
+        
+    }
+    
 
     /**
      * This helper method verifies that the user really wants to save their
@@ -254,17 +362,12 @@ public class AppFileController {
         
         // AND NOW GET THE USER'S SELECTION
         String selection = yesNoDialog.getSelection();
-        
-        AppDataComponent dataManager = app.getDataComponent();
-        
-        //DataManager dataManager = (DataManager)app.getDataComponent();
-        //System.out.println(((DataManager)dataManager).getName());
-        //AppFileComponent fileManager = app.getFileComponent();
-        //fileManager.saveData(dataManager, PATH_WORK);
+
         // IF THE USER SAID YES, THEN SAVE BEFORE MOVING ON
         if (selection.equals(AppYesNoCancelDialogSingleton.YES)) {
             // SAVE THE DATA FILE
-          
+            AppDataComponent dataManager = app.getDataComponent();
+	    
 	    if (currentWorkFile == null) {
 		// PROMPT THE USER FOR A FILE NAME
 		FileChooser fc = new FileChooser();
@@ -274,12 +377,11 @@ public class AppFileController {
 		new ExtensionFilter(props.getProperty(WORK_FILE_EXT_DESC), props.getProperty(WORK_FILE_EXT)));
 
 		File selectedFile = fc.showSaveDialog(app.getGUI().getWindow());
+
 		if (selectedFile != null) {
 		    saveWork(selectedFile);
 		    saved = true;
 		}
-                
-             
 	    }
 	    else {
 		saveWork(currentWorkFile);
@@ -316,15 +418,19 @@ public class AppFileController {
         // ONLY OPEN A NEW FILE IF THE USER SAYS OK
         if (selectedFile != null) {
             try {
+                Progressbar progressbar = Progressbar.getSingleton();
                 AppDataComponent dataManager = app.getDataComponent();
 		AppFileComponent fileManager = app.getFileComponent();
-                fileManager.loadData(dataManager, selectedFile.getAbsolutePath());
+                fileManager.loadData(dataManager, selectedFile.getPath());
+                
                 app.getWorkspaceComponent().reloadWorkspace();
+                
 
 		// MAKE SURE THE WORKSPACE IS ACTIVATED
 		app.getWorkspaceComponent().activateWorkspace(app.getGUI().getAppPane());
-                saved = true;
+                saved = false;
                 app.getGUI().updateToolbarControls(saved);
+                progressbar.show("loading");
             } catch (Exception e) {
                 AppMessageDialogSingleton dialog = AppMessageDialogSingleton.getSingleton();
                 dialog.show(props.getProperty(LOAD_ERROR_TITLE), props.getProperty(LOAD_ERROR_MESSAGE));

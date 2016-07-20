@@ -44,7 +44,9 @@ public class Progressbar extends Stage implements AppStyleArbiter{
         initModality(Modality.WINDOW_MODAL);
         initOwner(primaryStage);
         toolbar.getChildren().add(bar);
+        toolbar.getChildren().add(indicator);
         bar.setProgress(0);
+        indicator.setProgress(0);
         
         PropertiesManager props = PropertiesManager.getPropertiesManager();
         boolean success = loadProperties(SIMPLE_APP_PROPERTIES_FILE_NAME)&& loadProperties(WORKSPACE_PROPERTIES_FILE_NAME);  
@@ -61,14 +63,17 @@ public class Progressbar extends Stage implements AppStyleArbiter{
 
 
 
-    public void show(String title, int max) {
+    public void show(String title) {
 	// SET THE DIALOG TITLE BAR TITLE
 	setTitle(title);
+        bar.setProgress(1);
+        indicator.setProgress(1);
+        /*
         for(int i = 0; i < max; i++)
         {
             bar.setProgress(i/max);
         }
-        
+        */
         showAndWait();
     }
     public boolean loadProperties(String propertiesFileName) {
